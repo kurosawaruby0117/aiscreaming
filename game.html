@@ -14,19 +14,22 @@
   <button id="pauseBtn" class="pause-btn">⏸</button>
 
   <!-- 캐릭터 박스 -->
-  <div class="character-panel">
-    <img id="character" src="assets/ruby.png" alt="캐릭터" class="character-img" />
-    <div id="characterName" class="character-name">ルビィちゃん</div>
-  </div>
+ <!-- 캐릭터 이미지와 이름 -->
+<div class="character-panel">
+  <img id="character" src="assets/ruby.png" class="character-img" />
+  <div id="characterName" class="character-name">ルビィちゃん</div>
+</div>
 
-  <!-- 점수 + 게이지바 UI (한 줄) -->
-  <div class="gauge-row">
-    <span class="gauge-label" id="score">🍨 0</span>
-    <div class="character-gauge">
-      <div class="gauge-fill" id="gaugeFill"></div>
-    </div>
-    <span class="gauge-label" id="combo">💫 0</span>
+<!-- 점수 + 게이지 + 콤보 -->
+<div class="score-gauge-wrapper">
+  <div class="score-combo-line">
+    <span id="score">🍨 SCORE 0</span>
+    <span id="combo">💫 COMBO 0</span>
   </div>
+  <div class="character-gauge">
+    <div class="gauge-fill" id="gaugeFill"></div>
+  </div>
+</div>
 
   <!-- 피버게이지 -->
   <div class="fever-gauge" style="display: none;">
