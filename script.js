@@ -390,3 +390,14 @@ bgm.addEventListener("ended", () => {
   }
 });
 
+document.addEventListener('touchstart', function(e) {
+  if (e.touches.length > 1) {
+    e.preventDefault();  // 2손가락 확대 방지
+  }
+}, { passive: false });
+
+document.addEventListener('dblclick', function(e) {
+  e.preventDefault();  // 더블탭 확대 방지
+});
+
+
