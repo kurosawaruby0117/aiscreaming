@@ -1,49 +1,44 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
   <title>AiScream! - Game</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap" rel="stylesheet">
-
 </head>
 <body>
   <audio id="bgm" src="assets/bgm.mp3"></audio>
-  <div class="score-combo-ui">
-    <div class="ui-item">
-      <span class="value" id="score">🍨 SCORE 0</span>
-    </div>
-    <div class="ui-item">
-      <span class="value" id="combo">💫 COMBO 0</span>
-    </div>
-  </div>
-  
 
+  <!-- 상단 일시정지 버튼 -->
   <button id="pauseBtn" class="pause-btn">⏸</button>
 
+  <!-- 캐릭터 박스 -->
+  <div class="character-panel">
+    <img id="character" src="assets/ruby.png" alt="캐릭터" class="character-img" />
+    <div id="characterName" class="character-name">ルビィちゃん</div>
+  </div>
 
-<!-- 캐릭터 하얀 배경 -->
-<div class="character-panel">
-  <img id="character" src="assets/ruby.png" alt="캐릭터" class="character-img" />
-  <div id="characterName" class="character-name">루비</div>
-</div>
+  <!-- 점수 + 게이지바 UI (한 줄) -->
+  <div class="gauge-row">
+    <span class="gauge-label" id="score">🍨 0</span>
+    <div class="character-gauge">
+      <div class="gauge-fill" id="gaugeFill"></div>
+    </div>
+    <span class="gauge-label" id="combo">💫 0</span>
+  </div>
 
-<!-- 🔻 게이지는 아래로 이동 -->
-<div class="character-gauge">
-  <div class="gauge-fill" id="gaugeFill"></div>
-</div>
-<div class="fever-gauge" style="display: none;">
-  <div class="fever-gauge-fill" id="feverGaugeFill"></div>
-</div>
+  <!-- 피버게이지 -->
+  <div class="fever-gauge" style="display: none;">
+    <div class="fever-gauge-fill" id="feverGaugeFill"></div>
+  </div>
 
-<!-- 아이스크림 하얀 배경 -->
-<div class="grid-wrapper">
-  <div class="grid"></div>
-</div>
+  <!-- 아이스크림 블록 -->
+  <div class="grid-wrapper">
+    <div class="grid"></div>
+  </div>
 
+  <!-- 일시정지 모달 -->
   <div id="pauseModal" class="modal hidden">
     <div class="modal-content">
       <h2>⏸ PAUSE</h2>
@@ -51,6 +46,8 @@
       <button onclick="location.href='index.html'">🏠 GO MAIN</button>
     </div>
   </div>
+
+  <!-- 게임 시작 모달 -->
   <div id="startModal" class="modal">
     <div class="modal-content">
       <h2>🍦 キャラクターが好きなアイスクリーム！</h2>
@@ -71,14 +68,12 @@
           <img src="assets/ice_shiki.png" alt="クッキー＆クリーム" class="guide-ice" />
         </div>
       </div>
-      
-      <!-- 음량 안내 문구 추가 -->
       <p style="color: #ff4d88; font-weight: bold; margin-top: 1rem;">🎧 音量にご注意ください！</p>
-      
       <button id="startGameBtn">GAME START!</button>
     </div>
   </div>
-  
+
+  <!-- 결과 모달 -->
   <div id="resultModal" class="modal hidden">
     <div class="modal-content">
       <h2>🎉 GAME END</h2>
@@ -88,8 +83,7 @@
       <button onclick="location.href='index.html'">🏠 MAIN PAGE</button>
     </div>
   </div>
-  
-  
+
   <script src="script.js"></script>
 </body>
 </html>
