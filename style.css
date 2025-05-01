@@ -604,4 +604,54 @@
     0% { transform: rotate(-1deg); }
     100% { transform: rotate(1deg); }
   }
+
+@media (max-width: 600px) {
+  .score-combo-ui {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .character-panel {
+    margin-top: 20px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    max-width: 90vw;
+  }
+
+  .icecream-block {
+    width: 60px;
+    height: 60px;
+  }
+
+  .icecream-block img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .character-img {
+    width: 70px;
+    height: auto;
+  }
+}
+
+.score-combo-ui {
+  margin-bottom: 16px;
+}
+
+.character-panel {
+  margin-bottom: 10px;
+}
+
+body {
+  font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+}
   
