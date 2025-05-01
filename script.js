@@ -7,6 +7,8 @@ let inFeverTime = false;
 let isCharacterFrozen = false;
 let freezeUntilTime = null;
 let currentCharacter = "ruby";
+let feverPausedAt = null;  // 일시정지 시점
+let feverPausedDuration = 0;  // 누적 일시정지 시간
 
 let startTime = Date.now();
 let elapsedTime = 0;
@@ -272,17 +274,35 @@ pauseBtn.addEventListener("click", () => {
   bgm.pause();
   elapsedTime = Date.now() - startTime;
   elapsedGaugeTime = Date.now() - gaugeStartTime;
+
+  // ✅ 피버타임 일시정지 기록
+  if (inFeverTime) {
+    feverPausedAt = Date.now();
+  }
+
   pauseModal.classList.remove("hidden");
 });
+
 
 resumeBtn.addEventListener("click", () => {
   gamePaused = false;
   startTime = Date.now() - elapsedTime;
   gaugeStartTime = Date.now() - elapsedGaugeTime;
+
+  // ✅ 피버타임 시간 보정
+  if (inFeverTime && feverPausedAt) {
+    const pausedDuration = Date.now() - feverPausedAt;
+    feverStartTime += pausedDuration;
+    feverEndTime += pausedDuration;
+    feverPausedDuration += pausedDuration;
+    feverPausedAt = null;
+  }
+
   startGameTimer();
   bgm.play();
   pauseModal.classList.add("hidden");
 });
+
 
 const startModal = document.getElementById("startModal");
 const startGameBtn = document.getElementById("startGameBtn");
