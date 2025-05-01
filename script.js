@@ -221,7 +221,7 @@ function updateScoreUI() {
 
 function updateAllCharacterUI() {
   characterImg.src = "assets/triple.jpg";
-  characterName.textContent = "";
+  characterName.textContent = "みな〜！何が好き？";
 }
 
 function triggerFeverTime() {
@@ -229,7 +229,7 @@ function triggerFeverTime() {
   isCharacterFrozen = true;
 
   characterImg.src = "assets/triple.jpg";
-  characterName.textContent = "";
+  characterName.textContent = "みな〜！何が好き？";
   document.querySelector(".character-gauge").style.display = "none";
   document.querySelector(".fever-gauge").style.display = "block";
 
