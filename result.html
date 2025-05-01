@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>결과 화면</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="result-container">
+    <h2>🎉 게임 종료!</h2>
+    <p id="finalScore">최종 점수: 0</p>
+    <p id="maxCombo">최고 콤보: 0</p>
+    <button onclick="location.href='game.html'">🔁 다시하기</button>
+    <button onclick="location.href='index.html'">🏠 메인화면</button>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const score = urlParams.get('score');
+    const combo = urlParams.get('combo');
+
+    document.get

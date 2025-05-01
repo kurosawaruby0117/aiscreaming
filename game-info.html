@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>ゲーム説明</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="info-container">
+    <h2>ゲームの説明</h2>
+    <p>キャラクターと正しいアイスクリームをマッチさせて、スコアとコンボを稼ぎましょう！</p>
+
+    <div class="match-grid">
+      <div class="match-item">
+        <img src="assets/ruby.png" alt="ルビィ" />
+        <img src="assets/ice_ruby.png" alt="ミントチョコ" />
+        <p>ルビィ → ミントチョコ</p>
+      </div>
+      <div class="match-item">
+        <img src="assets/ayumu.png" alt="歩夢" />
+        <img src="assets/ice_ayumu.png" alt="いちご" />
+        <p>歩夢 → いちご</p>
+      </div>
+      <div class="match-item">
+        <img src="assets/wakanashiki.png" alt="識" />
+        <img src="assets/ice_shiki.png" alt="クッキー＆クリーム" />
+        <p>四季 → クッキー＆クリーム</p>
+      </div>
+    </div>
+    <h3>🎮 ゲームルール</h3>
+    <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
+      <li>画面に表示されるキャラクターに対応するアイスクリームをクリックしてください。</li>
+      <li>正解するとスコアが増え、コンボが続きます。</li>
+      <li><strong>コンボが15の倍数（15、30、45...）</strong>に到達すると、スコアが <code>2倍、4倍、8倍…</code> と上がっていきます。</li>
+      <li><strong>特定の時間帯（91秒〜123秒）</strong>にはキャラクターが固定され、その間に正解するとスコアが<strong>5倍</strong>になります。</li>
+      <li><strong>コンボが15の倍数</strong>に達すると <strong>フィーバータイム</strong> が発動し、一定時間、キャラクター3人がすべて同時に表示されます。</li>
+      <li>フィーバータイム中は、どのアイスをクリックしても<strong>すべて正解</strong>になります。</li>
+      <li>フィーバータイム中に再び15コンボに達すると、<strong>フィーバー時間が延長</strong>されます。</li>
+      <li>フィーバー中はコンボ数は増加しません。</li>
+      <li>間違えるとコンボが0にリセットされ、スコアが1減少します。</li>
+      <li>音楽が終わるとゲームも終了し、スコアと最高コンボ数が表示されます。</li>
+    </ul>
+    
+
+    <div class="info-buttons">
+      <button onclick="location.href='game.html'">🎲 ゲームを始める</button>
+      <button onclick="location.href='index.html'">← メイン画面へ</button>
+    </div>
+  </div>
+</body>
+</html>

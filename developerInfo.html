@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>開発者紹介</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 1.5rem;
+      background-color: #fffafc;
+      text-align: center;
+    }
+    h2 {
+      color: #ff4d88;
+      margin-bottom: 1rem;
+    }
+    .slider-container {
+      position: relative;
+      width: 90%;
+      max-width: 300px;
+      margin: 0 auto 1.5rem;
+    }
+    .profile-img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.8);
+      border: none;
+      font-size: 1.8rem;
+      padding: 0.2rem 0.6rem;
+      cursor: pointer;
+      border-radius: 50%;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .arrow:hover {
+      background-color: #ffe6f0;
+    }
+    .arrow.left { left: -15px; }
+    .arrow.right { right: -15px; }
+
+    .desc {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 2rem;
+    }
+    .back-btn {
+      background-color: #ffb6d9;
+      color: #fff;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: background 0.3s;
+    }
+    .back-btn:hover {
+      background-color: #ff88bb;
+    }
+  </style>
+</head>
+<body>
+  <h2>開発者：イチャンジン</h2>
+  <div class="slider-container">
+    <button class="arrow left" onclick="prevImage()">‹</button>
+    <img id="fanImg" src="assets/fanpic1.jpeg" alt="オタ活写真" class="profile-img" />
+    <button class="arrow right" onclick="nextImage()">›</button>
+  </div>
+  <p class="desc">
+    東京外国語大学の学生です。<br />
+    日本語・Webゲーム開発・ラブライブ！のオタ活が大好きです💖<br />
+    このゲームは、私の推しからインスピレーションを受けて作りました！
+  </p>
+  <button class="back-btn" onclick="window.location.href='index.html'">🏠 メイン画面へ戻る</button>
+
+  <script>
+   const images = [
+  'assets/fanpic1.jpeg',
+  'assets/fanpic2.jpeg',
+  'assets/fanpic3.jpeg',
+  'assets/fanpic4.jpeg',
+  'assets/fanpic5.jpeg'
+];
+
+    let current = 0;
+
+    function showImage(index) {
+      const img = document.getElementById("fanImg");
+      img.src = images[index];
+    }
+
+    function nextImage() {
+      current = (current + 1) % images.length;
+      showImage(current);
+    }
+
+    function prevImage() {
+      current = (current - 1 + images.length) % images.length;
+      showImage(current);
+    }
+  </script>
+</body>
+</html>

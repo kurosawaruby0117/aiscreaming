@@ -1,0 +1,607 @@
+
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff9f9;
+    text-align: center;
+  }
+
+  .main-bg {
+    background: url('assets/bg_main.png') no-repeat center center/cover;
+    height: 100vh;
+  }
+
+  .main-container {
+    padding-top: 15vh;
+    backdrop-filter: blur(2px);
+  }
+
+  .main-title {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+
+  .main-buttons button {
+    display: block;
+    margin: 0.5rem auto;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: 1px solid #aaa;
+    background-color: #fff;
+    transition: 0.3s;
+  }
+  .main-buttons button:hover {
+    background-color: #ffecec;
+    cursor: pointer;
+  }
+
+  .info-container {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .match-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .match-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .match-item img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 0.5rem;
+  }
+
+  .info-buttons button {
+    margin: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  .game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .top-ui {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 1rem;
+  }
+
+  .character-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .character-img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .icecream-block img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 600px) {
+    .main-title {
+      font-size: 2rem;
+    }
+
+    .match-grid {
+      flex-direction: column;
+    }
+
+    .match-item img {
+      width: 80px;
+    }
+
+    .main-buttons button {
+      width: 80%;
+    }
+
+    .top-ui {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+
+  .modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .hidden {
+    display: none;
+  }
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+
+  .modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .match-guide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 0;
+  }
+
+  .guide-item {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+  }
+
+  .guide-char, .guide-ice {
+    width: 80px;
+    height: auto;
+  }
+
+  .hidden {
+    display: none;
+  }
+  .icecream-block img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+
+  #character {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fffafc;
+    text-align: center;
+  }
+
+  /* 일시정지 버튼: 우측 상단 */
+  #pauseBtn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  #pauseBtn:hover {
+    background: #f0f0f0;
+  }
+
+  /* 캐릭터 영역 */
+  .character-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+  }
+
+
+
+  .character-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 8px;
+  }
+
+  /* 점수판 */
+  .score-panel {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  /* 그리드 (아이스크림) */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    justify-content: center;
+    gap: 12px;
+    margin: 30px auto;
+  }
+
+  /* 아이스크림 이미지 */
+  .icecream-block img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #fff7fb;
+    box-shadow: 0 0 4px rgba(0,0,0,0.1);
+  }
+
+  /* 모달 스타일 */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+  .modal-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+  }
+  .modal-content button {
+    margin-top: 10px;
+    padding: 10px 16px;
+    font-size: 16px;
+    border: none;
+    background: #ffcce0;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .modal-content button:hover {
+    background: #ff99c2;
+  }
+  .hidden {
+    display: none;
+  }
+
+  .character-gauge {
+    width: 160px;
+    height: 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    margin: 8px auto 0;
+    overflow: hidden;
+  }
+
+  .gauge-fill {
+    height: 100%;
+    width: 100%;
+    background-color: #ff92c2;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.1s linear;
+  }
+
+  .fever-gauge {
+    width: 200px;
+    height: 10px;
+    background-color: #ffd6e8;
+    border-radius: 5px;
+    margin: 10px auto;
+    overflow: hidden;
+  }
+
+  .fever-gauge-fill {
+    height: 100%;
+    width: 100%;
+    background-color: #ff4d88;
+    transform-origin: left;
+    transform: scaleX(1);
+    transition: transform 0.1s linear;
+  }
+
+  #resultModal.modal {
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+  }
+  #resultModal .modal-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+  }
+  #resultModal .modal-content button {
+    margin: 8px;
+    padding: 10px 20px;
+    background: #ffccdd;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  #resultModal .modal-content button:hover {
+    background: #ffaabb;
+  }
+  .score-combo-ui {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px; /* 👈 이 줄 추가 */
+    color: #ff5c93;
+    text-shadow: 1px 1px 1px white;
+  }
+  
+  .ui-item {
+    background-color: #ffe6ee;
+    border-radius: 12px;
+    padding: 8px 16px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  }
+  .label {
+    display: block;
+    font-size: 16px;
+    color: #ff88aa;
+  }
+  .value {
+    font-size: 24px;
+    color: #ff3e78;
+  }
+  #pauseBtn {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(to bottom, #fff, #ffe6ee);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    font-size: 20px;
+    color: #ff69a0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  #pauseBtn:hover {
+    background: #fff0f6;
+    transform: scale(1.05);
+  }
+  /* 캐릭터 카드 */
+  .character-panel {
+    background-color: white;
+    border-radius: 20px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 200px;
+    margin: 0 auto;
+  }
+
+  .character-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* 아이스크림 블록 */
+  .icecream-block {
+    background: white;
+    border-radius: 15px;
+    padding: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: 0.3s;
+  }
+  .icecream-block img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+  .character-panel {
+    background-color: white;
+    border-radius: 20px;
+    padding: 0.8rem;
+    width: 160px;  /* 기존보다 작게 */
+    margin: 0 auto;
+    border: 3px solid #e93cac; /* 기본 색상, JS에서 변경 */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    transition: border 0.3s, width 0.3s;
+  }
+  .character-img {
+    width: 100%;
+    max-height: 120px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+  .character-name {
+    font-size: 16px;
+    margin: 0.5rem 0 0.3rem 0;
+    font-weight: bold;
+  }
+  .character-gauge {
+    width: 100%;
+    height: 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 6px auto 0;
+  }
+  .character-panel {
+    background-color: white;
+    border-radius: 20px;
+    padding: 1rem 0.5rem;
+    width: 130px;
+    margin: 0 auto 0.5rem;
+    border: 3px solid #e93cac;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: border 0.3s;
+  }
+  .character-gauge,
+  .fever-gauge {
+    width: 160px;
+    height: 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    margin: 8px auto 12px auto;
+    overflow: hidden;
+  }
+
+  .gauge-fill {
+    height: 100%;
+    width: 100%;
+    background-color: #e93cac; /* 루비일 때 */
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.1s linear;
+  }
+
+  .fever-gauge-fill {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet);
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.1s linear;
+  }
+  .character-panel {
+    background-color: white;
+    border-radius: 16px;
+    padding: 6px;
+    width: fit-content;
+    margin: 0 auto;
+    border: 3px solid #e93cac; /* ← 루비일 경우. 동적으로 JS에서 변경 */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+
+  .character-img {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+  .character-panel {
+    background-color: white;
+    border-radius: 12px;
+    padding: 6px;
+    display: inline-block;
+    border: 3px solid #e93cac; /* 캐릭터에 따라 JS에서 변경됨 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin: 0 auto;
+  }
+  .icecream-block {
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    padding: 8px;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: border 0.3s;
+  }
+  .character-panel {
+    background-color: white;
+    border-radius: 12px;
+    display: inline-block;
+    border: 3px solid #e93cac; /* JS에서 변경 가능 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 0;
+    margin: 0 auto;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .character-img {
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  .main-title {
+    font-family: 'Nunito', 'Segoe UI', sans-serif;
+    font-size: 3.2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(255, 182, 193, 0.5);
+  }
+  
+  .main-title .ice {
+    color: #00cfc1; /* 민트 */
+  }
+  
+  .main-title .scream {
+    color: #ff4d88; /* 핑크 */
+    animation: shake 0.6s ease-in-out infinite alternate;
+  }
+  
+  @keyframes shake {
+    0% { transform: rotate(-1deg); }
+    100% { transform: rotate(1deg); }
+  }
+  
