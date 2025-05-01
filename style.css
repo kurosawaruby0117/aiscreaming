@@ -706,14 +706,15 @@ body {
   height: 10px;
   background-color: #eee;
   border-radius: 5px;
+  margin: 8px auto;
   overflow: hidden;
 }
 
 .gauge-fill {
   height: 100%;
   width: 100%;
-  background-color: #ff69b4;
-  transform: scaleX(0.5); /* JS에서 변경됨 */
+  background-color: #e93cac;
+  transform: scaleX(1);  /* 처음엔 가득 찬 상태 */
   transform-origin: left;
-  transition: transform 0.1s linear;
+  transition: transform 0.2s linear;
 }
