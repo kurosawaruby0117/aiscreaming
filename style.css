@@ -718,3 +718,6 @@ body {
   transform-origin: left;
   transition: transform 0.2s linear;
 }
+button, .icecream-block, .grid {
+  touch-action: manipulation;
+}
