@@ -166,8 +166,8 @@ function handleCorrect() {
   let base = 1;
 
   // 콤보에 따른 2배 증가: 15콤보 → 2점, 30콤보 → 4점, 45콤보 → 8점...
-  if (combo >= 50) {
-    base = Math.pow(5, Math.floor(combo / 50));
+  if (combo >= 25) {
+    base = Math.pow(5, Math.floor(combo / 25));
   }
 
   // 고정 시간 구간이면 5배 추가
