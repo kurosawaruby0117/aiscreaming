@@ -185,7 +185,7 @@ function handleCorrect() {
   updateScoreUI();
 
   // 피버타임 발동 or 연장
-  if (combo % 15 === 0 && combo !== 0 && !isFixedCharacterTime(currentSec)) {
+  if (combo % 25 === 0 && combo !== 0 && !isFixedCharacterTime(currentSec)) {
     if (!inFeverTime && combo !== lastFeverCombo) {
       lastFeverCombo = combo;
       triggerFeverTime();
