@@ -793,4 +793,15 @@ button, .icecream-block, .grid {
     font-size: 1rem;
   }
 }
+td, th {
+  border: 1px solid #ffd6e8;
+  padding: 10px;
+  word-break: break-word;     /* 줄바꿈 허용 */
+  white-space: normal;        /* 줄바꿈 가능하게 */
+  text-align: left;           /* 왼쪽 정렬 (가독성 향상) */
+}
 
+table {
+  width: 100%;
+  table-layout: fixed;         /* 고정된 레이아웃으로 */
+}
