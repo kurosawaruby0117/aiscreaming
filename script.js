@@ -51,7 +51,7 @@ const pauseModal = document.getElementById("pauseModal");
 const bgm = document.getElementById("bgm");
 
 function getRandomInterval() {
-  return 3 + Math.floor(Math.random() * 2); // 5~9초 사이
+  return 5 + Math.floor(Math.random() * 4); // 5~9초 사이
 }
 
 
