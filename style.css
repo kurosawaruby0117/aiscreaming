@@ -721,3 +721,76 @@ body {
 button, .icecream-block, .grid {
   touch-action: manipulation;
 }
+.info-buttons {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.info-buttons button {
+  background: linear-gradient(to bottom, #ffe6f0, #ffd6ec);
+  border: none;
+  border-radius: 16px;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #d6005e;
+  box-shadow: 0 4px 8px rgba(255, 192, 203, 0.3);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.info-buttons button:hover {
+  background: #ffcce0;
+  transform: scale(1.05);
+}
+.main-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.main-buttons button {
+  background: linear-gradient(to bottom, #fff0f5, #ffe0ec);
+  color: #d63384;
+  border: none;
+  border-radius: 20px;
+  padding: 14px 28px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(255, 182, 193, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.main-buttons button:hover {
+  background: #ffcce0;
+  transform: scale(1.05);
+}
+
+.main-buttons button {
+  width: 240px; /* ✅ 버튼 너비 고정 */
+  text-align: center;
+  /* 기존 스타일 유지 */
+  background: linear-gradient(to bottom, #fff0f5, #ffe0ec);
+  color: #d63384;
+  border: none;
+  border-radius: 20px;
+  padding: 14px 28px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(255, 182, 193, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+@media (max-width: 600px) {
+  .main-buttons button {
+    width: 90%;
+    font-size: 1rem;
+  }
+}
+
