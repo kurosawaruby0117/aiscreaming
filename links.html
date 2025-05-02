@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>便利な外部リンク</title>
   <style>
     body {
@@ -10,31 +11,44 @@
       padding: 1rem;
       text-align: center;
     }
+
     h2 {
       color: #ff4d88;
       margin-bottom: 1rem;
+      font-size: 1.5rem;
     }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
     table {
-      width: 90%;
+      width: 100%;
+      min-width: 600px;
       margin: 0 auto;
       border-collapse: collapse;
       font-size: 0.95rem;
     }
+
     th, td {
       border: 1px solid #ffd6e8;
       padding: 10px;
     }
+
     th {
       background-color: #ffe6f0;
       color: #d6005e;
     }
+
     td a {
       color: #0077cc;
       text-decoration: none;
     }
+
     td a:hover {
       text-decoration: underline;
     }
+
     .back-btn {
       margin-top: 25px;
       padding: 10px 20px;
@@ -45,46 +59,70 @@
       font-size: 1rem;
       cursor: pointer;
     }
+
     .back-btn:hover {
       background-color: #ff88bb;
+    }
+
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      table {
+        font-size: 0.85rem;
+      }
+
+      .back-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+      }
     }
   </style>
 </head>
 <body>
   <h2>おすすめの外部リンク</h2>
 
-  <table>
-    <tr>
-      <th>サイト名</th>
-      <th>説明</th>
-      <th>リンク</th>
-    </tr>
-    <tr>
-      <td>Stack Overflow</td>
-      <td>プログラミングに関する質問と回答</td>
-      <td><a href="https://stackoverflow.com/" target="_blank">アクセス</a></td>
-    </tr>
-    <tr>
-      <td>GitHub</td>
-      <td>コード共有とバージョン管理（ホームページ制作に便利）</td>
-      <td><a href="https://github.com/" target="_blank">アクセス</a></td>
-    </tr>
-    <tr>
-      <td>ラブライブ！公式チャンネル</td>
-      <td>ラブライブ！シリーズの最新動画</td>
-      <td><a href="https://www.youtube.com/@lovelive_series" target="_blank">アクセス</a></td>
-    </tr>
-    <tr>
-      <td>ChatGPT</td>
-      <td>AIによる学習補助・質問対応</td>
-      <td><a href="https://chat.openai.com/" target="_blank">アクセス</a></td>
-    </tr>
-    <tr>
-      <td>AiScream! ライブ動画</td>
-      <td>ライブ映像の視聴</td>
-      <td><a href="https://www.youtube.com/shorts/csmzPCk_3nk?feature=share" target="_blank">アクセス</a></td>
-    </tr>
-  </table>
+  <div class="table-container">
+    <table>
+      <tr>
+        <th>サイト名</th>
+        <th>説明</th>
+        <th>リンク</th>
+      </tr>
+      <tr>
+        <td>Stack Overflow</td>
+        <td>プログラミングに関する質問と回答</td>
+        <td><a href="https://stackoverflow.com/" target="_blank">アクセス</a></td>
+      </tr>
+      <tr>
+        <td>GitHub</td>
+        <td>コード共有とバージョン管理（ホームページ制作に便利）</td>
+        <td><a href="https://github.com/" target="_blank">アクセス</a></td>
+      </tr>
+      <tr>
+        <td>私のGitHubページ</td>
+        <td>AiScream!などのプロジェクトやソースコードを公開中</td>
+        <td><a href="https://github.com/kurosawaruby0117" target="_blank">アクセス</a></td>
+      </tr>
+      
+      <tr>
+        <td>ラブライブ！公式チャンネル</td>
+        <td>ラブライブ！シリーズの最新動画</td>
+        <td><a href="https://www.youtube.com/@lovelive_series" target="_blank">アクセス</a></td>
+      </tr>
+      <tr>
+        <td>ChatGPT</td>
+        <td>AIによる学習補助・質問対応</td>
+        <td><a href="https://chat.openai.com/" target="_blank">アクセス</a></td>
+      </tr>
+      <tr>
+        <td>AiScream! ライブ動画</td>
+        <td>ライブ映像の視聴</td>
+        <td><a href="https://www.youtube.com/shorts/csmzPCk_3nk?feature=share" target="_blank">アクセス</a></td>
+      </tr>
+    </table>
+  </div>
 
   <button class="back-btn" onclick="location.href='index.html'">← メイン画面に戻る</button>
 </body>
